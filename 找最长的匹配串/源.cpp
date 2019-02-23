@@ -75,6 +75,10 @@ public:
 		int j = 0;
 		vector<string> v;
 		string result = "";
+		if (str.size() == 1){
+			result += str[0];
+			return result;
+		}
 		for (i = 0; i<str.size(); ++i){
 			j = str.size() - 1;
 			while (j>i){
