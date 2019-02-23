@@ -77,18 +77,21 @@ public:
 		string result = "";
 		for (i = 0; i<str.size(); ++i){
 			j = str.size() - 1;
-			int left = i;
-			int right = j;
-			while (left<right&&str[left] == str[right]){
-				left++;
-				right--;
-			}
-			if (i<j&&left >= right){
-				result = "";
-				for (int tem = i; tem<=j; ++tem){
-					result += str[tem];
+			while (j>i){
+				int left = i;
+				int right = j;
+				while (left<right&&str[left] == str[right]){
+					left++;
+					right--;
 				}
-				v.push_back(result);
+				if (i<j&&left >= right){
+					result = "";
+					for (int tem = i; tem <= j; ++tem){
+						result += str[tem];
+					}
+					v.push_back(result);
+				}
+				--j;
 			}
 		}
 		for (size_t i = 0; i<v.size(); ++i){
