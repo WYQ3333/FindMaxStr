@@ -19,13 +19,15 @@ public:
 				if (str[i] == str[j]){
 					int temp = i;
 					int temp2 = j;
-					while (temp != temp2){
+					while (temp < temp2){
 						if (str[temp] == str[temp2]){
 							result += str[temp];
 							temp++;
 							temp2--;
 						}
-						break;
+						else{
+							break;
+						}
 					}
 					if (temp == temp2){
 						v.push_back(str);
